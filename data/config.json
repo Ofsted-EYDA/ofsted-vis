@@ -1,10 +1,10 @@
 {"ons":{
-"maptitle": "Median house price",
+"maptitle": "Childcare accessibility",
 "varcolour": ["#7FCDBB", "#41B6C4", "#1D91C0", "#225EA8", "#0C2C84", "#323132"],
-"varunit": "Median house price",
+"varunit": "Accessible childcare places per child",
 "displaydecimals": 3,
 "legenddecimals": 3,
-"breaks": [0,0.3,0.6,0.9,1.2,1.5, 2],
+"breaks": [0,0.3,0.6,0.9,1.2,1.5,1.8],
 "dropticks": true,
 "numberBreaks": 6,
 "nullColour": "#666"
