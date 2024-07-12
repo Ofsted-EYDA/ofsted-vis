@@ -334,7 +334,7 @@ if (Modernizr.webgl) {
         .style("top", "-5px")
         .text(function(d, i) {
           if (i != breaks.length - 1) {
-            return "£" + displayformat(breaks[i]) + " to £" + displayformat(breaks[i + 1] - 1);
+            return "" + displayformat(breaks[i]) + " to " + displayformat(breaks[i + 1] - 1);
           } else {
             return "No Data";
           }
@@ -555,7 +555,7 @@ function onLeave() {
 function setAxisVal(areanm, areaval) {
   d3.select("#keyvalue").html(function() {
     if (!isNaN(areaval)) {
-      return areanm + "<br>" + "£" + displayformat(areaval);
+      return areanm + "<br>" + "" + displayformat(areaval);
     } else {
       return areanm + "<br>No data available";
     }
@@ -564,7 +564,7 @@ function setAxisVal(areanm, areaval) {
 
 function setScreenreader(name, value) {
   if (!isNaN(value)) {
-    d3.select("#screenreadertext").text("The average house price paid in " + name + " is £" + d3.format(",")(value));
+    d3.select("#screenreadertext").text("The average house price paid in " + name + " is " + d3.format(",")(value));
   } else {
     d3.select("#screenreadertext").text("There is no data available for " + name);
   }
