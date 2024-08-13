@@ -504,7 +504,7 @@ function unhighlightArea(){
 function generateBreaks(data, dvc) {
   if (!Array.isArray(dvc.breaks)) {
     values = data.map(function(d) {
-      return +d.overall_percentage_change;
+      return +d.value;
     }).filter(function(d) {
       if (!isNaN(d)) {
         return d;
