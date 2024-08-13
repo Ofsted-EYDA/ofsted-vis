@@ -7,8 +7,8 @@ if (Modernizr.webgl) {
 
   //Load data and config file
   d3.queue()
-    .defer(d3.json, "data/config.json")
-    .defer(d3.csv, "data/data.csv")
+    .defer(d3.json, "data/config2.json")
+    .defer(d3.csv, "data/lsoa-monthly-change-in-accessibility-scores-Dec19-to-June24.csv")
     .await(ready);
 
   function ready(error, config, data) {
@@ -504,7 +504,7 @@ function unhighlightArea(){
 function generateBreaks(data, dvc) {
   if (!Array.isArray(dvc.breaks)) {
     values = data.map(function(d) {
-      return +d.value;
+      return +d.overall_percentage_change;
     }).filter(function(d) {
       if (!isNaN(d)) {
         return d;
@@ -562,9 +562,9 @@ function setAxisVal(areanm, areaval) {
   });
 }
 
-function setScreenreader(name, value) {
-  if (!isNaN(value)) {
-    d3.select("#screenreadertext").text("The average house price paid in " + name + " is " + d3.format(",")(value));
+function setScreenreader(name, overall_percentage_change) {
+  if (!isNaN(overall_percentage_change)) {
+    d3.select("#screenreadertext").text("The average house price paid in " + name + " is " + d3.format(",")(overall_percentage_change));
   } else {
     d3.select("#screenreadertext").text("There is no data available for " + name);
   }
@@ -575,8 +575,8 @@ function hideaxisVal() {
   d3.select("#screenreadertext").text("");
 }
 
-function getColour(value) {
-  return isNaN(value) ? dvc.nullColour : color(value);
+function getColour(overall_percentage_change) {
+  return isNaN(overall_percentage_change) ? dvc.nullColour : color(overall_percentage_change);
 }
 
 function csv2json(csv) {
