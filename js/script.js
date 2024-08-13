@@ -7,8 +7,8 @@ if (Modernizr.webgl) {
 
   //Load data and config file
   d3.queue()
-    .defer(d3.json, "data/config2.json")
-    .defer(d3.csv, "data/lsoa-monthly-change-in-accessibility-scores-Dec19-to-June24.csv")
+    .defer(d3.json, "data/config.json")
+    .defer(d3.csv, "data/data.csv")
     .await(ready);
 
   function ready(error, config, data) {
