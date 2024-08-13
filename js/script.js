@@ -8,7 +8,7 @@ if (Modernizr.webgl) {
   //Load data and config file
   d3.queue()
     .defer(d3.json, "data/config.json")
-    .defer(d3.csv, "data/data.csv")
+    .defer(d3.csv, "data/lsoa-monthly-change-in-accessibility-scores-Dec19-to-June24.csv")
     .await(ready);
 
   function ready(error, config, data) {
@@ -504,7 +504,7 @@ function unhighlightArea(){
 function generateBreaks(data, dvc) {
   if (!Array.isArray(dvc.breaks)) {
     values = data.map(function(d) {
-      return +d.value;
+      return +d.overall_change;
     }).filter(function(d) {
       if (!isNaN(d)) {
         return d;
