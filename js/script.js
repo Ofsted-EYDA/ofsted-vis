@@ -562,9 +562,9 @@ function setAxisVal(areanm, areaval) {
   });
 }
 
-function setScreenreader(name, overall_percentage_change) {
-  if (!isNaN(overall_percentage_change)) {
-    d3.select("#screenreadertext").text("The average house price paid in " + name + " is " + d3.format(",")(overall_percentage_change));
+function setScreenreader(name, value) {
+  if (!isNaN(value)) {
+    d3.select("#screenreadertext").text("The average house price paid in " + name + " is " + d3.format(",")(value));
   } else {
     d3.select("#screenreadertext").text("There is no data available for " + name);
   }
@@ -575,8 +575,8 @@ function hideaxisVal() {
   d3.select("#screenreadertext").text("");
 }
 
-function getColour(overall_percentage_change) {
-  return isNaN(overall_percentage_change) ? dvc.nullColour : color(overall_percentage_change);
+function getColour(value) {
+  return isNaN(value) ? dvc.nullColour : color(value);
 }
 
 function csv2json(csv) {
