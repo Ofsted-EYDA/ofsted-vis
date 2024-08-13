@@ -4,7 +4,7 @@
 "varunit": "Change in childcare accessibility ratio (December 2019 to March 2024)",
 "displaydecimals": 0,
 "legenddecimals": 0,
-"breaks": [-1.14,-0.808,-0.476,-0.144,0.188,0.52],
+"breaks": [],
 "dropticks": true,
 "numberBreaks": 6,
 "nullColour": "#666"
